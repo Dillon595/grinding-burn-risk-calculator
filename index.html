@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grinding Burn Risk Calculator — Heat &amp; Specific Energy</title>
+<meta name="description" content="Preview of the SinoGrind grinding burn risk calculator: estimate heat risk from material, wheel, depth of cut, speed and coolant, with mitigation checks.">
+<meta name="robots" content="index, follow">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; color: #1f2937; background: #f6f8fb; line-height: 1.65; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  header { margin-bottom: 24px; }
+  header a { color: #0c4da2; text-decoration: none; font-weight: 600; }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 8px 0 10px; color: #0f172a; }
+  .lead { color: #475569; margin: 0 0 24px; }
+  .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+  .panel h2 { font-size: 1.05rem; margin: 0 0 16px; color: #0c4da2; }
+  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  label { display: block; font-size: .9rem; font-weight: 500; color: #374151; margin-bottom: 6px; }
+  input, select { width: 100%; padding: 10px 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: .95rem; color: #212529; background: #fff; }
+  input:focus, select:focus { outline: none; border-color: #4a6cf7; box-shadow: 0 0 0 3px rgba(74,108,247,.15); }
+  .cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px; padding: 12px 24px; border-radius: 6px; background: #4a6cf7; color: #fff; text-decoration: none; font-weight: 600; }
+  .cta:hover { background: #3b5ce0; }
+  .note { font-size: .88rem; color: #64748b; margin-top: 12px; }
+  ul { padding-left: 20px; margin: 10px 0 0; color: #475569; }
+  li { margin: 6px 0; }
+  footer { margin-top: 32px; padding-top: 18px; border-top: 1px solid #e5e7eb; font-size: .9rem; color: #64748b; }
+  footer a { color: #0c4da2; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="https://sinogrind.com">SinoGrind Co., Ltd.</a>
+    <h1>Grinding Burn Risk Calculator</h1>
+    <p class="lead">Estimate heat and burn risk from material, wheel, depth of cut, speed and coolant. This is a preview; the working calculator runs on sinogrind.com.</p>
+  </header>
+
+  <div class="panel">
+    <h2>Quick inputs</h2>
+    <form onsubmit="return false;">
+      <div class="row">
+        <div>
+          <label for="material">Workpiece material</label>
+          <select id="material">
+            <option>Carbon steel</option>
+            <option>Alloy steel</option>
+            <option>Hardened steel</option>
+            <option>Stainless steel</option>
+            <option>Cast iron</option>
+            <option>Aluminium</option>
+            <option>Carbide</option>
+            <option>Ceramic</option>
+          </select>
+        </div>
+        <div>
+          <label for="wheel">Wheel type</label>
+          <select id="wheel">
+            <option>Diamond — resin bond</option>
+            <option>Diamond — metal bond</option>
+            <option>CBN — vitrified bond</option>
+            <option>Alumina — vitrified bond</option>
+            <option>Electroplated diamond / CBN</option>
+          </select>
+        </div>
+        <div>
+          <label for="depth">Depth of cut (mm)</label>
+          <input id="depth" type="number" min="0" step="0.01" placeholder="e.g. 0.02">
+        </div>
+        <div>
+          <label for="speed">Wheel speed (m/s)</label>
+          <input id="speed" type="number" min="0" step="1" placeholder="e.g. 30">
+        </div>
+        <div>
+          <label for="coolant">Coolant</label>
+          <select id="coolant">
+            <option>Flood</option>
+            <option>High pressure</option>
+            <option>Mist</option>
+            <option>Dry</option>
+          </select>
+        </div>
+      </div>
+      <a class="cta" href="https://sinogrind.com/tools/grinding-burn-risk-calculator">Open the full calculator →</a>
+      <p class="note">The preview does not calculate a result. The full tool produces a risk level, specific-energy indicator, likely damage mode and mitigation checklist.</p>
+    </form>
+  </div>
+
+  <div class="panel">
+    <h2>What the full tool covers</h2>
+    <ul>
+      <li>Burn risk screening by material and wheel type</li>
+      <li>Specific energy and heat concentration indicators</li>
+      <li>Likely damage mode: burn, tempering, cracks or residual stress</li>
+      <li>Practical actions for coolant, depth of cut, speed and dressing</li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="https://sinogrind.com/articles/grinding_wheel_abrasive_types">Grinding wheel abrasive types</a></li>
+      <li><a href="https://sinogrind.com/articles/grinding_wheel_speed_chart">Wheel speed chart: RPM, m/s and safe limits</a></li>
+      <li><a href="https://sinogrind.com/articles/grinding_wheel_balancing">Grinding wheel balancing</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Full calculator: <a href="https://sinogrind.com/tools/grinding-burn-risk-calculator">sinogrind.com/tools/grinding-burn-risk-calculator</a></p>
+    <p>All tools: <a href="https://sinogrind.com/tools">sinogrind.com/tools</a> · Articles: <a href="https://sinogrind.com/articles">sinogrind.com/articles</a></p>
+    <p>Preview only. Validate all parameters against your machine, wheel and workpiece before use.</p>
+  </footer>
+</div>
+</body>
+</html>
